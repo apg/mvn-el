@@ -2,6 +2,8 @@
 
 ;; Copyright (C) 2013 Andrew Gwozdziewycz <git@apgwoz.com>
 
+;; Author: Andrew Gwozdziewycz <git@apgwoz.com>
+;; URL : https://github.com/apgwoz/mvn-el
 ;; Version: 0.1
 ;; Keywords: compilation, maven, java
 
@@ -94,3 +96,5 @@
     (mvn "test")))
 
 (provide 'mvn)
+
+;;; maven.el ends here
