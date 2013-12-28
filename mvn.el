@@ -62,10 +62,12 @@
   (let ((cwd default-directory))
     (locate-dominating-file cwd mvn-build-file-name)))
 
+;;;###autoload
 (defun mvn-kill-cache ()
   (interactive)
   (setq *mvn-tasks-cache* '()))
 
+;;;###autoload
 (defun mvn (&optional task args)
   "Run mvn `task` in project root directory."
   (interactive)
@@ -76,19 +78,23 @@
           (compile (concat mvn-command " " task " " args)))
       (message "Couldn't find a maven project."))))
 
+;;;###autoload
 (defun mvn-last ()
   "Run the last maven task in project"
   (interactive)
   (mvn (or mvn-last-task "")))
 
+;;;###autoload
 (defun mvn-compile ()
   (interactive)
   (mvn "compile"))
 
+;;;###autoload
 (defun mvn-clean ()
   (interactive)
   (mvn "clean"))
 
+;;;###autoload
 (defun mvn-test (prefix)
   (interactive "MTest: ")
   (if prefix
