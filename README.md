@@ -33,7 +33,20 @@ The basic operation is to invoke `M-x mvn`, which will ask you for a goal.
         (mvn "dependency:sources"))
         
 `M-x mvn-kill-cache` kills the internal cache used to speed up the auto-completion of ant tasks in the mini-buffer.
-        
+
+### Tips
+
+When the compilation buffer looks garbled, it usually from the wrong terminal escape sequences.  You may insert following code into your init script so that compilation buffer can correctly shows colored messages [ansi-color][4]:
+
+    (ignore-errors
+      (require 'ansi-color)
+      (defun colorize-compilation-buffer ()
+        (when (eq major-mode 'compilation-mode)
+          (let ((inhibit-read-only t))
+            (if (boundp 'compilation-filter-start)
+                (ansi-color-apply-on-region compilation-filter-start (point))))))
+      (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
+
 ### Future
 
 In the future, I'd really like to build a more general mode for working with Java code--something like [malabar-mode][3], but without a lot of the semantic stuff it does. Minimal requirements:
@@ -48,3 +61,4 @@ In the future, I'd really like to build a more general mode for working with Jav
 [1]: http://maven.apache.org
 [2]: http://www.gnu.org/licenses/gpl.html
 [3]: https://github.com/espenhw/malabar-mode
+[4]: http://stackoverflow.com/questions/13397737/ansi-coloring-in-compilation-mode
