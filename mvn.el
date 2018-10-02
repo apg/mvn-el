@@ -1,4 +1,4 @@
-;;; maven.el --- helpers for compiling with maven
+;;; mvn.el --- helpers for compiling with maven
 
 ;; Copyright (C) 2013 Andrew Gwozdziewycz <git@apgwoz.com>
 
@@ -520,4 +520,4 @@
 
 (provide 'mvn)
 
-;;; maven.el ends here
+;;; mvn.el ends here
