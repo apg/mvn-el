@@ -6,9 +6,9 @@ This is a few helpers for using compilation mode in Emacs with maven.
 
 ### Customizations
 
-If you're maven is in a nonstandard location, `(setq mvn-command "/path/to/ant -emacs")`
+If your maven is in a nonstandard location, `(setq mvn-command "/path/to/ant -emacs")`
 
-If you're build doesn't use "pom.xml", you'll need to modify `mvn-command` to end with with `-f` or `--file` and also do `(setq mvn-build-file-name "somethingelse.xml")` so that the automated project root discovery works correctly.
+If your build doesn't use "pom.xml", you'll need to modify `mvn-command` to end with with `-f` or `--file` and also do `(setq mvn-build-file-name "somethingelse.xml")` so that the automated project root discovery works correctly.
 
 ### Installation
 
